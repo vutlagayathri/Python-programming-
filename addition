@@ -1,0 +1,6 @@
+def add(x, n):
+    return x + n 
+X = int(input("Enter X: "))
+N = int(input("Enter N: ")) 
+result = add(X, N)
+print(f"Add({X}, {N}) = {result}")
