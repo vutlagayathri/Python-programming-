@@ -1,0 +1,7 @@
+test_str = 'gayathri'
+print("The original string is : " + str(test_str))
+K = 4
+res = ''
+for idx in range(0, len(test_str), K * 2): 
+	res += test_str[idx : idx + K]
+print("Transformed String : " + str(res)) 
