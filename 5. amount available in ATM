@@ -1,0 +1,11 @@
+def calculate_total_amount(denominations, num_notes):
+    total_amount = 0
+    for i in range(len(denominations)):
+        total_amount += denominations[i] * num_notes[i]
+    return total_amount 
+denominations = [2000, 500, 200, 100]  
+num_notes = []
+for denomination in denominations:
+    num_notes.append(int(input(f"Enter the number of {denomination} notes: "))) 
+total_amount = calculate_total_amount(denominations, num_notes) 
+print(f"Total amount available in the ATM machine: {total_amount}")
