@@ -1,23 +1,21 @@
-def decimal_to_binary(decimal):
-    binary = ""
-    
-    # Edge case: decimal is 0
+ def decimal_to_binary(decimal):
+    binary = ''
     if decimal == 0:
-        return "0"
-    
+        return '0'
     while decimal > 0:
-        # Taking remainder when the decimal is divided by 2
-        remainder = decimal % 2
-        
-        # Prepend the remainder to the binary string
-        binary = str(remainder) + binary
-        
-        # Update decimal by integer division
-        decimal = decimal // 2
-    
-    return binary
-
-# Test the function
-decimal_number = int(input("Enter a decimal number: "))
-binary_number = decimal_to_binary(decimal_number)
-print("Binary representation:", binary_number)
+        binary = str(decimal % 2) + binary
+        decimal //= 2
+    return binary 
+def decimal_to_octal(decimal):
+    octal = ''
+    if decimal == 0:
+        return '0'
+    while decimal > 0:
+        octal = str(decimal % 8) + octal
+        decimal //= 8
+    return octal 
+decimal = int(input("Enter a decimal number: ")) 
+binary = decimal_to_binary(decimal)
+octal = decimal_to_octal(decimal) 
+print("Binary equivalent:", binary)
+print("Octal equivalent:", octal)
