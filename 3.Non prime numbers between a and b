@@ -1,0 +1,21 @@
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num == 2:
+        return True
+    if num % 2 == 0:
+        return False
+    i = 3
+    while i*i <= num:
+        if num % i == 0:
+            return False
+        i += 2
+    return True 
+def print_non_primes(a, b):
+    print(f"Non-prime numbers between {a} and {b}:")
+    for num in range(a, b+1):
+        if not is_prime(num):
+            print(num, end=" ") 
+A = int(input("Enter the value of A: "))
+B = int(input("Enter the value of B: ")) 
+print_non_primes(A, B)
