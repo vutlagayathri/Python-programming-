@@ -1,0 +1,13 @@
+def generate_sequence(M, N, K):
+    result = []
+    num = M
+    while num <= N:
+        result.append(num)
+        num += K + 1   
+    return result 
+M = int(input("Enter the value of M: "))
+N = int(input("Enter the value of N: "))
+K = int(input("Enter the value of K: ")) 
+sequence = generate_sequence(M, N, K) 
+print("Generated Sequence:")
+print(*sequence, sep=", ")
