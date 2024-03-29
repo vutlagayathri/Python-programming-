@@ -2,22 +2,18 @@ def is_valid(s):
     stack = []
     mapping = {')': '(', '}': '{', ']': '['} 
     for char in s:
-        if char in {'(', '{', '['}:
+        if char in mapping.values():
             stack.append(char)
-        elif char in {')', '}', ']'}:
-            if not stack:
-                return False
-            elif stack[-1] != mapping[char]:
+        elif char in mapping.keys():
+            if not stack or stack[-1] != mapping[char]:
                 return False
             else:
-                stack.pop() 
+                stack.pop()
+        else: 
+            return False 
     return len(stack) == 0 
-s = input("Enter the string: ")
+s = input("Enter the string containing parentheses, curly brackets, and square brackets: ") 
 if is_valid(s):
-    print("The string is valid.")
+    print("Output: true")
 else:
-    print("The string is not valid.")
-
-
-
-
+    print("Output: false")
